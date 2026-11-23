@@ -1,0 +1,65 @@
+GRAVEYARD ORBIT UI SCALING (0.1.0)
+==================================
+
+WHAT THIS IS
+  A standalone BepInEx plugin that adds a Text Size option to Graveyard Orbit's
+  Display settings. It is intended for the Steam Deck and other small screens,
+  but works at any resolution.
+
+DISCLAIMER
+  This mod is 100% vibe coded and 100% the product of AI use. It is an
+  unofficial fan project. I make no claims of ownership over Graveyard Orbit
+  or anything derived from it. All credit and all rights belong to
+  Anchorhead Games. No game code or game asset files are redistributed here.
+
+REQUIREMENTS
+  - Windows 10/11, or Linux / Steam Deck (Proton)
+  - Graveyard Orbit installed through Steam (AppID 4654120)
+
+INSTALL (SAME ON WINDOWS AND LINUX)
+  1. Close Graveyard Orbit.
+  2. In Steam, right-click Graveyard Orbit > Manage > Browse local files.
+     That opens the game folder (the one containing GraveyardOrbit.exe).
+  3. Download the latest release zip from
+       https://github.com/Grokent/graveyard_orbit_ui_scaling/releases/latest
+     (asset GraveyardOrbit-UI-Scaling-0.1.0.zip).
+  4. Extract EVERYTHING from the zip into the game folder that opened in step 2.
+     It only adds files; nothing in the original game is replaced:
+       winhttp.dll
+       doorstop_config.ini
+       .doorstop_version
+       changelog.txt
+       BepInEx/...
+  5. Linux / Steam Deck (Proton) ONLY: add this launch option once
+     (game > Properties > Launch Options):
+       WINEDLLOVERRIDES="winhttp=n,b" %command%
+     Windows needs no launch options.
+  6. Launch the game through Steam normally.
+
+USING IT
+  - Open Settings > Display.
+  - Find Text Size, below Resolution.
+  - Choose 100%, 125%, 150% or 200%.
+  - 150% is the recommended Steam Deck setting.
+  - 200% is experimental and may make dense menus feel crowded.
+  - Close the settings modal to apply the new size.
+
+WHAT IT DOES
+  Only font sizes are changed. The game's panel and HUD layout stays in its
+  original position, so menu options and fixed panels are not pushed offscreen.
+  A few fixed-size cards (the contract cards and extractor purchase cards) keep
+  their original text size to prevent clipping.
+
+UNINSTALL
+  Delete BepInEx/plugins/GraveyardOrbit.UIScaling/
+  Remove winhttp.dll, doorstop_config.ini, .doorstop_version, changelog.txt and
+  BepInEx/ only if you do not use any other BepInEx mod.
+
+LOGS
+  BepInEx/LogOutput.log
+  Look for: [Graveyard Orbit UI Scaling] UI Scaling loaded
+
+NOTE
+  BepInEx injects through winhttp.dll. Some antivirus tools may flag it as a
+  false positive; that file is part of the standard BepInEx mod loader.
+  Graveyard Orbit and all related content belong to Anchorhead Games.
